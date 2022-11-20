@@ -1,6 +1,5 @@
-# Makefile Template
-A C++ Makefile Template  
-made by marvhus
+# oclPGE test
+Some fiddling around and learing of the Pixel Game Engine made by One Lone Coder. https://github.com/OneLoneCoder/olcPixelGameEngine
 
 ## Quickstart
 

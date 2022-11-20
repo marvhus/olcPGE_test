@@ -1,12 +1,46 @@
-#include <iostream>
+#define OLC_PGE_APPLICATION
+#include "olcPixelGameEngine.h"
 
-#include "print.hpp"
-#include "sub/test.hpp"
-
-int main(int argc, char** argv)
+class olcPGEtest : public olc::PixelGameEngine
 {
-  print("Testing123");
-  println("Test321");
-  println("Hello");
-  test();
+public:
+	olcPGEtest()
+	{
+		sAppName = "olcPGE test";
+	}
+
+public:
+	bool OnUserCreate() override
+	{
+		// Called once at the start, so create things here
+		return true;
+	}
+
+	bool OnUserUpdate(float fElapsedTime) override
+	{
+		// called once per frame
+		for (int x = 0; x < ScreenWidth(); x++)
+			for (int y = 0; y < ScreenHeight(); y++) {
+                olc::Pixel pix;
+                if (x > 30 && x < 226 && y > 30 && y < 210)
+                    pix = olc::Pixel(255, 50, 0);
+                else
+                    pix = olc::Pixel(
+                            rand() % 255,
+                            rand() % 255,
+                            rand() % 255);
+				Draw(x, y, pix);	
+            }
+		return true;
+	}
+};
+
+
+int main()
+{
+	olcPGEtest instance;
+	if (instance.Construct(256, 240, 4, 4))
+	    instance.Start();
+
+	return 0;
 }
