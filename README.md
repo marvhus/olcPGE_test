@@ -1,6 +1,10 @@
 # oclPGE test
 Some fiddling around and learing of the Pixel Game Engine made by One Lone Coder. https://github.com/OneLoneCoder/olcPixelGameEngine
 
+Note:  
+this uses Version 2.20 of olcPGE
+[link to release](https://github.com/OneLoneCoder/olcPixelGameEngine/releases/tag/v2.20)
+
 ## Quickstart
 
 ### Compile/Build
