@@ -31,7 +31,8 @@ public:
                             rand() % 255);
 				Draw(x, y, pix);	
             }
-		return true;
+        // Exit when escape has been pressed
+		return !GetKey(olc::Key::ESCAPE).bPressed;
 	}
 };
 
